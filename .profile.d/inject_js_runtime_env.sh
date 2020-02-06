@@ -15,6 +15,7 @@ then
   # Get exact filename.
   js_bundle_filename=`ls $JS_RUNTIME_TARGET_BUNDLE`
   
+  echo "Injecting runtime env prefix to '$JS_RUNTIME_ENV_PREFIX'"
   echo "Injecting runtime env into $js_bundle_filename (from .profile.d/inject_js_runtime_env.sh)"
 
   # Render runtime env vars into bundle.
