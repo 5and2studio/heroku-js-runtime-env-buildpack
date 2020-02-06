@@ -2,10 +2,11 @@
 require 'json'
 
 class InjectableEnv
-  DefaultVarMatcher = '/^JS_RUNTIME_/'
+  DefaultVarMatcher = '^JS_RUNTIME_'
   Placeholder = /\{\{REACT_APP_VARS_AS_JSON_*?\}\}/
 
   def self.create(pattern=DefaultVarMatcher)
+    puts "the pattern #{pattern}"
     matcher = Regexp.new(pattern)
     vars = ENV.find_all {|name,value| matcher===name }
 
